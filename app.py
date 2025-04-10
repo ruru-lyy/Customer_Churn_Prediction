@@ -3,6 +3,10 @@ import pandas as pd
 import joblib
 from PIL import Image
 
+from tools.label_encoder_custom import label_encode_columns
+
+
+
 model = joblib.load('vault\\xgboost_model.pkl')  
 preprocessor = joblib.load('vault\\churn_preprocessor.pkl')
 
@@ -13,7 +17,9 @@ st.title("🙆‍♀️ Customer Churn Predictor")
 col_img1, col_img2, col_img3 = st.columns([1, 2, 1])
 with col_img2:
     img = Image.open("assets/Cute_Cartoon.png")
-    st.image(img, caption="Meet Alex – Our Curious Customer!", use_column_width=True)
+    st.image(img, caption="Meet Alex – Our Curious Customer!", use_container_width=True)
+   
+
 
 st.markdown("Enter customer details below to check if they're likely to churn!")
 

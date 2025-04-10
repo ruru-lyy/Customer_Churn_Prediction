@@ -6,6 +6,5 @@ seaborn
 xgboost
 shap
 streamlit
-jupyterlab
 plotly
 openpyxl
