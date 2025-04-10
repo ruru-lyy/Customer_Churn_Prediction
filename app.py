@@ -1,14 +1,18 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 from PIL import Image
 
 from tools.label_encoder_custom import label_encode_columns
 
 
 
-model = joblib.load('vault\\xgboost_model.pkl')  
-preprocessor = joblib.load('vault\\churn_preprocessor.pkl')
+model_path = os.path.join("vault", "xgboost_model.pkl")
+model = joblib.load(model_path)
+
+preprocessor_path = os.path.join("vault", "churn_preprocessor.pkl")
+preprocessor = joblib.load(preprocessor_path)
 
 st.set_page_config(page_title="Churn Predictor", page_icon="👨‍💼")
 st.title("🙆‍♀️ Customer Churn Predictor")
